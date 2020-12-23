@@ -13,9 +13,15 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
+%multiply X and theta, in the proper order that the inner dimensions match
+h = (X * theta);
 
+%error = the difference between h and y
+errors = (h-y);
 
+error_sqr = (errors.^2);
 
+J = (1/(2*m))*sum(error_sqr);
 
 % =========================================================================
 

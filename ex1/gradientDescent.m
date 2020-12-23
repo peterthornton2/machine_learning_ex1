@@ -16,10 +16,11 @@ for iter = 1:num_iters
     % Hint: While debugging, it can be useful to print out the values
     %       of the cost function (computeCost) and gradient here.
     %
+%multiply X and theta, in the proper order that the inner dimensions match
+h = (X * theta);
 
 
-
-
+theta = theta - (alpha/m)* ( (h - y)' * X)';
 
 
 
@@ -29,5 +30,6 @@ for iter = 1:num_iters
     J_history(iter) = computeCost(X, y, theta);
 
 end
+
 
 end
